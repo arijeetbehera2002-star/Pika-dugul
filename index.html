@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070914">
+<title>newyear2021 | Dugul ♥ Pika</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+:root{--bg:#070914;--bg2:#10162a;--text:#f5f0e7;--muted:#aaa9b4;--gold:#d9bd7d;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-weight:300;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+section{min-height:100svh;position:relative;display:grid;place-items:center;padding:80px 7vw;overflow:hidden}.content{position:relative;z-index:2;max-width:780px;text-align:center}.serif,h1,h2,h3,.quote{font-family:"Cormorant Garamond",serif}h1,h2,h3{font-weight:400;line-height:.95;margin:0}h1{font-size:clamp(4rem,17vw,9rem);letter-spacing:-.04em}h2{font-size:clamp(3.2rem,12vw,7rem)}h3{font-size:clamp(2.2rem,8vw,4rem)}.lead{font-family:"Cormorant Garamond",serif;font-size:clamp(1.55rem,5vw,2.6rem);line-height:1.18}.kicker{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font-size:.66rem;margin-bottom:28px}.muted{color:var(--muted)}.gold{color:var(--gold)}.small{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hero{background:radial-gradient(circle at 50% 42%,#17213d 0,#0c1121 38%,var(--bg) 72%)}.stars,.stars:before,.stars:after{position:absolute;inset:0;content:"";background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 1px,transparent 1.5px),radial-gradient(circle,rgba(217,189,125,.5) 0 1px,transparent 1.5px);background-size:97px 113px,151px 167px;background-position:10px 20px,60px 90px;animation:drift 30s linear infinite;opacity:.27}.stars:before{transform:scale(1.5);opacity:.1;animation-duration:50s}.stars:after{transform:scale(2);opacity:.06;animation-duration:70s}@keyframes drift{to{transform:translate3d(-35px,25px,0)}}.fade{opacity:0;transform:translateY(20px);animation:reveal 1.4s ease forwards}.d1{animation-delay:.7s}.d2{animation-delay:1.8s}.d3{animation-delay:3s}@keyframes reveal{to{opacity:1;transform:none}}.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}.scroll:after{content:"";display:block;width:1px;height:42px;margin:12px auto 0;background:linear-gradient(var(--gold),transparent)}
+
+.chat{background:linear-gradient(#070914,#0d1222)}.chatbox{width:min(100%,560px)}.chat-top{text-align:center;color:var(--muted);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:42px}.bubble{max-width:78%;padding:14px 18px;border-radius:20px;margin:16px 0;line-height:1.5}.you{margin-left:auto;background:#202a44;border-bottom-right-radius:5px}.her{background:#151b2c;border-bottom-left-radius:5px}.chat-note{text-align:center;margin:50px 0;color:var(--muted);font-family:"Cormorant Garamond",serif;font-size:1.5rem}
+
+.time{background:radial-gradient(circle at 50% 50%,#19213b,#070914 67%)}.clock{font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,18vw,9rem)}.question{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,8vw,4.5rem);margin-top:48px}.answer{margin-top:40px;color:var(--muted);font-family:"Cormorant Garamond",serif;font-size:1.4rem;opacity:.9}
+
+.begin{background:linear-gradient(180deg,#070914,#11182b)}.date{color:var(--gold);letter-spacing:.3em;font-size:.72rem}.names{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,12vw,7rem);margin-top:34px}.heart{color:#e3c78a}.tag{margin-top:24px;color:var(--muted);font-family:"Cormorant Garamond",serif;font-size:1.4rem}
+
+.photo{background:#080b15}.photo img{width:min(88vw,650px);max-height:72svh;object-fit:cover;border-radius:5px;display:block;box-shadow:0 30px 90px rgba(0,0,0,.6)}.caption{text-align:center;margin-top:28px}.caption p{font-family:"Cormorant Garamond",serif;font-size:2rem;margin:0 0 7px}.caption small{color:var(--muted)}
+
+.chapter{background:linear-gradient(180deg,#0b1020,#11182b)}.chapter-copy{font-family:"Cormorant Garamond",serif;font-size:clamp(1.5rem,4.5vw,2.2rem);line-height:1.35;color:#d9d5cd;margin-top:42px}.chapter-copy p{margin:0 0 25px}
+
+.firstmeet{background:radial-gradient(circle at 50% 30%,#1a2036,#090c17 70%)}.date-big{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,12vw,6rem);margin:18px 0 35px}.racing{font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,5vw,2.5rem);line-height:1.25}.pulse{display:inline-block;animation:pulse 1.4s infinite}@keyframes pulse{50%{transform:scale(1.04)}}
+
+.memories{background:#080b15}.memory-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:min(92vw,700px);margin-top:35px}.memory-card{min-height:150px;border:1px solid var(--line);border-radius:8px;padding:25px 15px;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01))}.memory-card span{font-family:"Cormorant Garamond",serif;font-size:1.5rem}.memory-card small{color:var(--muted);font-size:.65rem;margin-top:8px}
+
+.pika{background:linear-gradient(180deg,#0a0d18,#131a2c)}.pika-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:40px}.pill{border:1px solid rgba(217,189,125,.35);padding:12px 18px;border-radius:99px;color:#e6dfd2}
+
+.companion{background:radial-gradient(circle at 50% 35%,#19213a,#080b15 70%)}.letter{max-width:700px;text-align:left;margin-top:40px;font-family:"Cormorant Garamond",serif;font-size:clamp(1.35rem,4vw,2rem);line-height:1.45;color:#e1ddd5}.letter p{margin:0 0 22px}.signature{text-align:right;color:var(--gold);margin-top:35px}
+
+.song{background:#090c17}.vinyl{width:180px;height:180px;border-radius:50%;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;margin:35px auto;box-shadow:0 0 70px var(--glow);animation:spin 12s linear infinite}.vinyl:before{content:"";width:50px;height:50px;border-radius:50%;background:#0d1222;border:1px solid var(--gold)}@keyframes spin{to{transform:rotate(360deg)}}
+
+.birthday{background:radial-gradient(circle at 50% 35%,#1d2339,#080b15 68%)}.birthday .placeholder{border:1px dashed rgba(217,189,125,.45);padding:30px 20px;margin-top:35px;color:var(--muted);font-family:"Cormorant Garamond",serif;font-size:1.5rem}.final{background:#05060c;min-height:90svh}.final h2{font-size:clamp(4rem,15vw,8rem)}.final-note{margin-top:30px;color:var(--muted);font-family:"Cormorant Garamond",serif;font-size:1.45rem}footer{padding:45px 20px 70px;text-align:center;background:#05060c;color:#777;font-size:.65rem;letter-spacing:.12em}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:520px){section{padding-left:22px;padding-right:22px}.memory-grid{gap:8px}.memory-card{min-height:135px;padding:18px 10px}}
+</style>
+</head>
+<body>
+
+<div id="passwordGate" style="position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at 50% 40%,#17213d 0,#090c18 48%,#05060c 100%);color:#f5f0e7;text-align:center">
+  <div style="width:min(92vw,520px)">
+    <div style="color:#d9bd7d;letter-spacing:.28em;text-transform:uppercase;font:500 .65rem Inter,system-ui,sans-serif;margin-bottom:28px">newyear2021</div>
+    <div style="font:400 clamp(3rem,13vw,6rem)/.9 'Cormorant Garamond',serif">Pika,<br>this is for your eyes only.</div>
+    <p style="font:400 1.35rem/1.3 'Cormorant Garamond',serif;color:#aaa9b4;margin:28px 0 34px">A little piece of our story,<br>made just for you.</p>
+    <input id="storyPassword" type="password" inputmode="numeric" maxlength="4" placeholder="Enter the password" aria-label="Password"
+      style="width:100%;padding:16px 18px;border:1px solid rgba(217,189,125,.35);border-radius:8px;background:rgba(255,255,255,.04);color:#f5f0e7;text-align:center;font-size:18px;outline:none">
+    <button id="unlockStory" style="margin-top:14px;width:100%;padding:16px;border:0;border-radius:8px;background:#d9bd7d;color:#111522;font-size:15px;font-weight:600;cursor:pointer">Unlock our story ♥</button>
+    <div id="passwordError" style="height:24px;margin-top:12px;color:#e7a7a7;font-size:13px"></div>
+  </div>
+</div>
+
+
+<section class="hero">
+<div class="stars"></div>
+<div class="content">
+<div class="kicker fade">newyear2021</div>
+<h1 class="fade d1">Some stories<br>begin quietly.</h1>
+<p class="lead fade d2">Ours began with a simple <span class="gold">"Hey."</span></p>
+</div>
+<div class="scroll fade d3">Begin our story</div>
+</section>
+
+<section class="chat">
+<div class="chatbox content">
+<div class="chat-top">Somewhere on Facebook</div>
+<div class="bubble you">Hey</div>
+<div class="bubble her">Hey</div>
+<div class="chat-note">Nothing extraordinary.<br>Just two people talking.</div>
+<p class="lead">Until somewhere along the way...</p>
+<p class="lead gold">we fell in love.</p>
+</div>
+</section>
+
+<section class="time">
+<div class="content">
+<div class="kicker">New Year 2021</div>
+<div class="clock">12:51 AM</div>
+<div class="question">"Do you <span class="gold">love me?</span>"</div>
+<div class="answer">And that was the question that changed everything.</div>
+</div>
+</section>
+
+<section class="begin">
+<div class="content">
+<div class="date">01 · 01 · 2021</div>
+<h2>The beginning<br>of us.</h2>
+<div class="names">Dugul <span class="heart">♥</span> Pika</div>
+<div class="tag">A story that started at 12:51 AM.</div>
+</div>
+</section>
+
+<section class="photo">
+<div class="content">
+<img src="hero-photo.jpg" alt="Dugul and Pika">
+<div class="caption"><p>Five years later...</p><small>Still here. Still us.</small></div>
+</div>
+</section>
+
+<section class="chapter">
+<div class="content reveal">
+<div class="kicker">Chapter 01</div>
+<h2>Before we knew<br>it was love.</h2>
+<div class="chapter-copy">
+<p>We met online. We talked about ordinary things. Nothing special. Nothing dramatic.</p>
+<p>But sometimes love doesn't announce itself when it arrives.</p>
+<p>Sometimes it quietly becomes part of your everyday life.</p>
+<p>And somewhere between all those ordinary conversations...</p>
+<p class="gold">we became something extraordinary.</p>
+</div>
+</div>
+</section>
+
+<section class="firstmeet">
+<div class="content reveal">
+<div class="kicker">Chapter 02 · The first time we met</div>
+<h2>From a screen<br>to right in front of me.</h2>
+<div class="date-big">27 · 08 · 2023</div>
+<div class="racing">It was a magical moment.<br><span class="pulse">My heart was racing.</span></div>
+<p class="lead muted" style="margin-top:35px">After knowing you for so long, suddenly you were there. Really there. And for a moment, everything felt unreal in the most beautiful way.</p>
+</div>
+</section>
+
+<section class="memories">
+<div class="content reveal">
+<div class="kicker">Chapter 03 · Five years of us</div>
+<h2>No memory<br>is forgettable.</h2>
+<p class="lead muted" style="margin-top:35px">Because every memory of you is unforgettable.</p>
+<div class="memory-grid">
+<div class="memory-card"><div><span>Every laugh</span><br><small>worth remembering</small></div></div>
+<div class="memory-card"><div><span>Every little moment</span><br><small>became part of us</small></div></div>
+<div class="memory-card"><div><span>Every ordinary day</span><br><small>felt less ordinary with you</small></div></div>
+<div class="memory-card"><div><span>Everything</span><br><small>is unforgettable</small></div></div>
+</div>
+</div>
+</section>
+
+<section class="pika">
+<div class="content reveal">
+<div class="kicker">Chapter 04 · This is Pika</div>
+<h2>My favorite<br>kind of chaos.</h2>
+<p class="lead muted" style="margin-top:35px">A little childish. A little goofy. Completely yourself.</p>
+<div class="pika-list">
+<div class="pill">Your childishness</div><div class="pill">Your goofy nature</div><div class="pill">Your smile</div>
+</div>
+<p class="lead" style="margin-top:45px">And somehow, exactly the person I fell in love with.</p>
+</div>
+</section>
+
+<section class="companion">
+<div class="content reveal">
+<div class="kicker">Chapter 05 · My companion</div>
+<h2>The journey<br>wasn't the best part.</h2>
+<div class="letter">
+<p>They say the journey is better than the destination.</p>
+<p><span class="gold">I say the companion is better than the destination.</span></p>
+<p>A companion who never gives up hope in you. A companion who always believes in you and chooses to stay.</p>
+<p>You have been that companion for me, all along.</p>
+<p>Only God knows how thankful I am that you came into my life and made me the best person.</p>
+<p>Sometimes you don't need to do anything. Your presence is enough for me to feel good.</p>
+<p>For a boy who is introverted and struggled with his own insecurities, <span class="gold">you became my voice.</span></p>
+</div>
+<div class="signature">Your Dugul</div>
+</div>
+</section>
+
+<section class="song">
+<div class="content reveal">
+<div class="kicker">Chapter 06 · Our song</div>
+<h2>Lag Ja Gale</h2>
+<div class="vinyl"></div>
+<p class="lead muted">Some songs become memories.<br>Some memories become home.</p>
+<p class="small" style="margin-top:35px">Lata Mangeshkar</p>
+</div>
+</section>
+
+<section class="birthday">
+<div class="content reveal">
+<div class="kicker">Chapter 07 · For your birthday</div>
+<h2>Dear Pika,</h2>
+<div class="placeholder">Your birthday message will live here.<br><br>Write it from your heart. This is the one part of the story only Dugul can finish.</div>
+</div>
+</section>
+
+<section class="final">
+<div class="content reveal">
+<div class="kicker">12:51</div>
+<h2>Happy Birthday,<br><span class="gold">Pika.</span></h2>
+<p class="final-note">From the boy who sent you a "Hey."<br>To the girl who became his everything.</p>
+<p class="lead" style="margin-top:50px">Dugul ♥ Pika</p>
+</div>
+</section>
+
+<footer>newyear2021 · a story by Dugul, for Pika</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+<script>
+(function(){
+  const gate = document.getElementById('passwordGate');
+  const input = document.getElementById('storyPassword');
+  const button = document.getElementById('unlockStory');
+  const error = document.getElementById('passwordError');
+
+  function unlock(){
+    if(input.value === '1251'){
+      gate.style.transition = 'opacity .9s ease, transform .9s ease';
+      gate.style.opacity = '0';
+      gate.style.transform = 'scale(1.03)';
+      setTimeout(()=>gate.remove(), 950);
+    } else {
+      error.textContent = 'That is not it. Think of the moment that changed everything. 🌙';
+      input.value = '';
+      input.focus();
+    }
+  }
+  button.addEventListener('click', unlock);
+  input.addEventListener('keydown', e => { if(e.key === 'Enter') unlock(); });
+})();
+</script>
+
+</body>
+</html>
