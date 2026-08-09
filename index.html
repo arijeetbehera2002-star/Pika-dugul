@@ -228,13 +228,21 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
     "arijeet","sagar","niranjan","dudul","arijeet behera","dudgul"
   ]);
 
-  const dhokaGirls=new Set([
+  const dhokaA=new Set([
     "monalisa","monalisa beuria","pika","pikan","lisa"
   ]);
 
-  const dhokaOthers=new Set([
+  const dhokaB=new Set([
     "avipsa","abhipsa","swati","dipti",
     "swatirekha mahala","avipsa swani","diptisikha prusty"
+  ]);
+
+  const whoA=new Set([
+    "arijeet","arijeet behera","dudul","dugul"
+  ]);
+
+  const whoB=new Set([
+    "momo","momu","dharitri","smruti"
   ]);
 
   function show(icon,title,text){
@@ -246,40 +254,42 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
     const n1=norm(person1.value);
     const n2=norm(person2.value);
 
+    // 1. Same name always wins.
     if(!n1 || !n2){
       show("❤️","ENTER BOTH NAMES","Please enter two names.");
       return;
     }
 
-    // 1. Same names always mean INVALID.
     if(n1===n2){
       show("⚠️","INVALID","Please enter two different names. 😉");
       return;
     }
 
-    // 2. DHOKA pair, checked before every other special outcome.
-    const dhoka =
-      (dhokaGirls.has(n1) && dhokaOthers.has(n2)) ||
-      (dhokaGirls.has(n2) && dhokaOthers.has(n1));
-
-    if(dhoka){
+    // 2. DHOKA.
+    if((dhokaA.has(n1)&&dhokaB.has(n2))||(dhokaA.has(n2)&&dhokaB.has(n1))){
       show("💔😭","DHOKA","Heartbreak detected. 😭");
       return;
     }
 
-    // 3. Secret pair.
-    if(secretNames.has(n1) && secretNames.has(n2)){
+    // 3. WOH KON HAI?
+    if((whoA.has(n1)&&whoB.has(n2))||(whoA.has(n2)&&whoB.has(n1))){
+      show("👀","WOH KON HAI ?","Woh kon hai ? 😏");
+      return;
+    }
+
+    // 4. SECRET.
+    if(secretNames.has(n1)&&secretNames.has(n2)){
       show("🤫","SECRET 😉","You found the secret.");
       return;
     }
 
-    // 4. Infinite pair.
-    if(infiniteNames.has(n1) && infiniteNames.has(n2)){
+    // 5. INFINITE LOVE.
+    if(infiniteNames.has(n1)&&infiniteNames.has(n2)){
       show("∞","INFINITE LOVE","Some things simply cannot be measured. ❤️");
       return;
     }
 
-    // 5. Everyone else gets a random percentage below 100.
+    // 6. Everyone else: random 1-99%.
     const pct=Math.floor(Math.random()*99)+1;
     result.classList.remove("hidden");
     result.innerHTML='<div style="width:100%"><div class="love-percent" id="loveNumber">0%</div><div class="love-meter"><div class="love-fill" id="loveFill"></div></div><div class="love-label">'+n1+' ♥ '+n2+'</div></div>';
@@ -287,13 +297,13 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
     setTimeout(function(){
       const fill=document.getElementById("loveFill");
       const number=document.getElementById("loveNumber");
-      if(!fill || !number) return;
+      if(!fill||!number)return;
       fill.style.width=pct+"%";
       let cur=0;
       const timer=setInterval(function(){
         cur=Math.min(pct,cur+2);
         number.textContent=cur+"%";
-        if(cur>=pct) clearInterval(timer);
+        if(cur>=pct)clearInterval(timer);
       },25);
     },60);
   }
@@ -301,7 +311,7 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   button.addEventListener("click",calculate);
   [person1,person2].forEach(function(input){
     input.addEventListener("keydown",function(e){
-      if(e.key==="Enter") calculate();
+      if(e.key==="Enter")calculate();
     });
   });
 })();
