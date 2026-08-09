@@ -38,6 +38,46 @@ section{min-height:100svh;position:relative;display:grid;place-items:center;padd
 @media(max-width:520px){section{padding-left:22px;padding-right:22px}.memory-grid{gap:8px}.memory-card{min-height:135px;padding:18px 10px}}
 
 .birthday-message{max-width:760px;margin:35px auto 0;text-align:left;font-family:"Cormorant Garamond",serif;font-size:clamp(1.35rem,3.8vw,1.85rem);line-height:1.5;color:#e1ddd5}.birthday-message p{margin:0}.love-game{background:radial-gradient(circle at 50% 35%,#21152d,#080b15 70%)}.love-game .content{width:min(100%,650px)}.love-form{display:grid;gap:14px;margin:38px auto 0}.love-input{width:100%;padding:16px 18px;border:1px solid rgba(217,189,125,.35);border-radius:8px;background:rgba(255,255,255,.04);color:#f5f0e7;text-align:center;font:400 1.1rem Inter,system-ui,sans-serif;outline:none}.love-input:focus{border-color:var(--gold);box-shadow:0 0 25px rgba(217,189,125,.12)}.love-button{padding:16px;border:0;border-radius:8px;background:#d9bd7d;color:#111522;font-weight:600;cursor:pointer;font-size:15px}.love-result{margin-top:38px;min-height:120px;display:grid;place-items:center}.love-percent{font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,16vw,7rem);color:var(--gold);line-height:1}.love-label{margin-top:10px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-size:.7rem}.infinite{font-family:"Cormorant Garamond",serif;font-size:clamp(4.5rem,18vw,9rem);color:var(--gold);line-height:.85;animation:lovePulse 1.2s ease-in-out infinite}.infinite-text{margin-top:18px;font-family:"Cormorant Garamond",serif;font-size:1.5rem}.love-meter{height:7px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin:20px auto 0;max-width:520px}.love-fill{height:100%;width:0;background:var(--gold);transition:width 1.2s ease}.love-result.hidden{display:none}@keyframes lovePulse{50%{transform:scale(1.08);text-shadow:0 0 35px rgba(217,189,125,.55)}}
+
+/* Impossible Quiz */
+.impossible-quiz{background:radial-gradient(circle at 50% 25%,#1b1025 0,#080910 62%,#030407 100%);min-height:100svh}
+.quiz-wrap{width:min(100%,760px)}
+.quiz-gift{font-family:"Cormorant Garamond",serif;font-size:clamp(1.35rem,4vw,2rem);line-height:1.35;color:#e9e1d3;margin:28px auto 34px}
+.quiz-card{margin:28px auto 0;padding:28px 22px;border:1px solid rgba(217,189,125,.3);border-radius:16px;background:rgba(255,255,255,.035);box-shadow:0 20px 80px rgba(0,0,0,.35)}
+.quiz-progress{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.quiz-question{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15;margin:0 0 26px}
+.quiz-options{display:grid;gap:13px}
+.quiz-option{padding:17px 18px;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:rgba(255,255,255,.045);color:var(--text);font:500 1rem Inter,system-ui,sans-serif;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.quiz-option:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(217,189,125,.08)}
+.quiz-option:disabled{cursor:default}
+.quiz-error{display:none;margin-top:24px;padding:18px;border:1px solid rgba(255,70,70,.45);border-radius:10px;background:rgba(100,0,0,.18);animation:errorShake .38s ease}
+.quiz-error.show{display:block}
+.quiz-buzz{font-size:1.4rem;font-weight:800;letter-spacing:.12em;color:#ff6d6d}
+.quiz-error-title{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-top:7px;color:#ffb0b0}
+.quiz-answer{font-family:"Cormorant Garamond",serif;font-size:1.45rem;line-height:1.3;margin-top:12px}
+.quiz-next{margin-top:20px;padding:13px 22px;border:0;border-radius:8px;background:var(--gold);color:#111522;font-weight:700;cursor:pointer}
+.quiz-finale{display:none;position:relative;min-height:80svh;align-items:center;justify-items:center;overflow:hidden}
+.quiz-finale.show{display:grid}
+.quiz-finale-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(217,189,125,.16),transparent 38%);pointer-events:none}
+.quiz-score{font-family:"Cormorant Garamond",serif;font-size:clamp(4.8rem,17vw,9rem);line-height:.9;color:#ff4b4b;text-shadow:0 0 35px rgba(255,60,60,.25);animation:scoreDrop .9s cubic-bezier(.2,.9,.2,1)}
+.quiz-final-content{position:relative;z-index:2;width:min(100%,820px);text-align:center}
+.quiz-reveal-label{font-size:clamp(2rem,7vw,4rem);font-weight:800;letter-spacing:.08em;color:#ffcf45;text-shadow:0 0 25px rgba(255,207,69,.3);animation:revealFlash 1s ease both}
+.quiz-photo-frame{width:min(88vw,620px);margin:30px auto 20px;padding:8px;border:2px solid #d9bd7d;border-radius:15px;background:#090a0f;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 25px 90px rgba(0,0,0,.7);opacity:0;transform:scale(.72) rotate(-2deg);animation:photoReveal 1.1s .35s cubic-bezier(.16,1,.3,1) forwards}
+.quiz-photo-frame img{display:block;width:100%;max-height:68svh;object-fit:cover;border-radius:9px}
+.quiz-winner{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,7vw,4.8rem);line-height:1;color:#f4cf61;font-weight:600;animation:winnerPop .9s 1s cubic-bezier(.2,1.5,.3,1) both}
+.quiz-joke{font-family:"Cormorant Garamond",serif;font-size:clamp(1.35rem,4.5vw,2.2rem);line-height:1.25;margin-top:18px;color:#f2eee6;animation:fadeUp .8s 1.35s ease both}
+.quiz-don{font-size:clamp(2.6rem,9vw,5.5rem);font-weight:900;font-style:italic;color:#ff3d6e;text-shadow:0 0 25px rgba(255,61,110,.3);margin-top:18px;animation:donPop .75s 1.7s cubic-bezier(.15,1.5,.3,1) both}
+.quiz-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.quiz-confetti i{position:absolute;top:-12%;width:8px;height:15px;border-radius:2px;animation:confettiFall linear infinite;opacity:.9}
+@keyframes errorShake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+@keyframes scoreDrop{from{opacity:0;transform:translateY(-50px) scale(.7)}to{opacity:1;transform:none}}
+@keyframes revealFlash{0%{opacity:0;transform:scale(.5);filter:blur(10px)}65%{opacity:1;transform:scale(1.12);filter:none}100%{transform:scale(1)}}
+@keyframes photoReveal{to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes winnerPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes donPop{from{opacity:0;transform:scale(.45) rotate(-5deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes confettiFall{to{transform:translate3d(var(--drift),120vh,0) rotate(720deg)}}
+@media(max-width:520px){.quiz-card{padding:22px 16px}.quiz-option{padding:15px 14px}.quiz-photo-frame{width:92vw}}
 </style>
 </head>
 <body>
@@ -176,6 +216,50 @@ section{min-height:100svh;position:relative;display:grid;place-items:center;padd
 
 
 <section class="love-game"><div class="content reveal"><div class="kicker">The final game</div><h2>Love Meter</h2><p class="lead muted" style="margin-top:25px">Enter two names and see what the universe has to say. ❤️</p><div class="love-form"><input id="person1" class="love-input" type="text" placeholder="Person 1" autocomplete="off"><input id="person2" class="love-input" type="text" placeholder="Person 2" autocomplete="off"><button id="loveButton" class="love-button">Calculate Love ♥</button></div><div id="loveResult" class="love-result hidden"></div></div></section>
+
+<section class="impossible-quiz" id="impossibleQuiz">
+  <div class="content reveal quiz-wrap" id="quizStart">
+    <div class="kicker">Game #2</div>
+    <h2>Impossible Quiz</h2>
+    <p class="lead" style="margin-top:24px">5 questions. 2 options. Absolutely no chance. 😈</p>
+    <p class="quiz-gift">🎁 Whoever wins this quiz will receive a <span class="gold">special gift from Arijeet.</span></p>
+    <button class="love-button" id="startQuiz">Start the Impossible Quiz ⚡</button>
+  </div>
+
+  <div class="content quiz-wrap" id="quizGame" style="display:none">
+    <div class="quiz-card">
+      <div class="quiz-progress" id="quizProgress">Question 1 / 5</div>
+      <h3 class="quiz-question" id="quizQuestion"></h3>
+      <div class="quiz-options">
+        <button class="quiz-option" id="quizA"></button>
+        <button class="quiz-option" id="quizB"></button>
+      </div>
+      <div class="quiz-error" id="quizError">
+        <div class="quiz-buzz">🔊 BUZZZZZZZZ! 🚨</div>
+        <div class="quiz-error-title" id="quizErrorTitle">ERROR: INCORRECT ANSWER</div>
+        <div class="quiz-answer" id="quizAnswer"></div>
+        <button class="quiz-next" id="quizNext">Next Question →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-finale" id="quizFinale">
+    <div class="quiz-finale-bg"></div>
+    <div class="quiz-confetti" id="quizConfetti"></div>
+    <div class="quiz-final-content">
+      <div class="kicker">Quiz Complete</div>
+      <div class="quiz-score">0 / 5</div>
+      <div class="quiz-reveal-label">REVEAL...</div>
+      <div class="quiz-photo-frame">
+        <img src="monalisa-quiz.jpg" alt="Monalisa Beuria">
+      </div>
+      <div class="quiz-winner">MONALISA BEURIA IS THE REAL WINNER MERI JAAN</div>
+      <div class="quiz-joke">Mona madam ke aage koi bol sakta kyaaaa... 😎</div>
+      <div class="quiz-don">AEEEE MONA DONNN! 👑🔥</div>
+    </div>
+  </div>
+</section>
+
 <footer>newyear2021 · a story by Dugul, for Pika</footer>
 
 <script>
@@ -322,6 +406,148 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
       if(e.key==="Enter")calculate();
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  const questions=[
+    {
+      q:"Which one is greater?",
+      a:"Statue of Liberty 🗽",
+      b:"Statue of Unity 🇮🇳",
+      answer:"Monalisa Beuria is the greatest. 👑"
+    },
+    {
+      q:"Whose IQ is greater?",
+      a:"Albert Einstein 🧠",
+      b:"Stephen Hawking 🧠",
+      answer:"Monalisa Beuria's IQ. 🧠👑"
+    },
+    {
+      q:"Who is the powerhouse of the cell?",
+      a:"Mitochondria 🔬",
+      b:"Nucleus 🧬",
+      answer:"Monalisa Beuria is the supreme powerhouse. ⚡👑"
+    },
+    {
+      q:"Who is the most beautiful?",
+      a:"The Moon 🌙",
+      b:"A blooming rose 🌹",
+      answer:"ARE YOU KIDDING? Of course it is the Great Monalisa Beuria! 👑<br><br><strong>Beauty level:</strong><br>Tum husn pari<br>Tum jaane jahan<br>Tum sabse haseen<br>Tum sabse jawan ❤️"
+    },
+    {
+      q:"Earth revolves around ________.",
+      a:"The Sun ☀️",
+      b:"A Black Hole 🕳️",
+      answer:"Earth ka pata nahi, Arijeet toh Monalisa ke charo taraf ghumta hai bas. 🌀<br><br><strong>Revolving level:</strong><br>“Kyu aage piche ghumte ho bhawron ki tarah...” 🐝"
+    }
+  ];
+
+  const start=document.getElementById("startQuiz");
+  const startBox=document.getElementById("quizStart");
+  const game=document.getElementById("quizGame");
+  const finale=document.getElementById("quizFinale");
+  const qEl=document.getElementById("quizQuestion");
+  const aEl=document.getElementById("quizA");
+  const bEl=document.getElementById("quizB");
+  const progress=document.getElementById("quizProgress");
+  const error=document.getElementById("quizError");
+  const answer=document.getElementById("quizAnswer");
+  const next=document.getElementById("quizNext");
+  let current=0, answered=false;
+
+  function buzz(){
+    try{
+      const AC=window.AudioContext||window.webkitAudioContext;
+      if(!AC)return;
+      const ctx=new AC();
+      const now=ctx.currentTime;
+      const gain=ctx.createGain();
+      gain.gain.setValueAtTime(0.0001,now);
+      gain.gain.exponentialRampToValueAtTime(.18,now+.02);
+      gain.gain.exponentialRampToValueAtTime(.0001,now+.42);
+      gain.connect(ctx.destination);
+      [150,110,75].forEach(function(freq,i){
+        const osc=ctx.createOscillator();
+        osc.type="sawtooth";
+        osc.frequency.setValueAtTime(freq,now+i*.07);
+        osc.connect(gain);
+        osc.start(now+i*.07);
+        osc.stop(now+i*.07+.18);
+      });
+    }catch(e){}
+  }
+
+  function renderQuestion(){
+    const item=questions[current];
+    progress.textContent="Question "+(current+1)+" / "+questions.length;
+    qEl.textContent=item.q;
+    aEl.textContent="A) "+item.a;
+    bEl.textContent="B) "+item.b;
+    aEl.disabled=false; bEl.disabled=false;
+    error.classList.remove("show");
+    answered=false;
+    next.textContent=current===questions.length-1 ? "Reveal the Winner 👑" : "Next Question →";
+  }
+
+  function choose(){
+    if(answered)return;
+    answered=true;
+    aEl.disabled=true; bEl.disabled=true;
+    buzz();
+    const item=questions[current];
+    answer.innerHTML=item.answer;
+    error.classList.add("show");
+  }
+
+  function beginQuiz(){
+    startBox.style.display="none";
+    game.style.display="block";
+    renderQuestion();
+    game.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+
+  start.addEventListener("click",beginQuiz);
+
+  // Press Enter anywhere while the quiz intro is active to enter the quiz.
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Enter" && startBox.style.display!=="none"){
+      e.preventDefault();
+      beginQuiz();
+    }
+  });
+
+  aEl.addEventListener("click",choose);
+  bEl.addEventListener("click",choose);
+
+  next.addEventListener("click",function(){
+    if(!answered)return;
+    if(current<questions.length-1){
+      current++;
+      renderQuestion();
+      return;
+    }
+    game.style.display="none";
+    finale.classList.add("show");
+    finale.scrollIntoView({behavior:"smooth",block:"center"});
+    makeConfetti();
+  });
+
+  function makeConfetti(){
+    const box=document.getElementById("quizConfetti");
+    const pieces=65;
+    for(let i=0;i<pieces;i++){
+      const p=document.createElement("i");
+      p.style.left=(Math.random()*100)+"%";
+      p.style.animationDuration=(3+Math.random()*4)+"s";
+      p.style.animationDelay=(Math.random()*1.5)+"s";
+      p.style.setProperty("--drift",(Math.random()*180-90)+"px");
+      p.style.transform="rotate("+(Math.random()*360)+"deg)";
+      p.style.background="hsl("+(Math.random()*360)+" 85% 62%)";
+      box.appendChild(p);
+    }
+  }
 })();
 </script>
 </body>
