@@ -277,19 +277,27 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
       return;
     }
 
-    // 4. SECRET.
+    // 4. KUCH TOH HAI.
+    const kuchA=new Set(["monalisa","monalisa beuria","pika","pikan","lisa"]);
+    const kuchB=new Set(["biju","subhasis das","jyotiranjan prusty"]);
+    if((kuchA.has(n1)&&kuchB.has(n2))||(kuchA.has(n2)&&kuchB.has(n1))){
+      show("🤨","KUCH TOH HAI","Something's going on... 👀");
+      return;
+    }
+
+    // 5. SECRET.
     if(secretNames.has(n1)&&secretNames.has(n2)){
       show("🤫","SECRET 😉","You found the secret.");
       return;
     }
 
-    // 5. INFINITE LOVE.
+    // 6. INFINITE LOVE.
     if(infiniteNames.has(n1)&&infiniteNames.has(n2)){
       show("∞","INFINITE LOVE","Some things simply cannot be measured. ❤️");
       return;
     }
 
-    // 6. Everyone else: random 1-99%.
+    // 7. Everyone else: random 1-99%.
     const pct=Math.floor(Math.random()*99)+1;
     result.classList.remove("hidden");
     result.innerHTML='<div style="width:100%"><div class="love-percent" id="loveNumber">0%</div><div class="love-meter"><div class="love-fill" id="loveFill"></div></div><div class="love-label">'+n1+' ♥ '+n2+'</div></div>';
