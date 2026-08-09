@@ -113,6 +113,36 @@ section{min-height:100svh;position:relative;display:grid;place-items:center;padd
 }
 </style>
 
+
+<style id="vertical-monalisa-rating">
+/* Monalisa Rating System: mobile-friendly vertical scale */
+.monalisa-rating-scale,
+.rating-scale,
+.rating-buttons {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  width:min(92vw,320px) !important;
+  margin:18px auto !important;
+}
+.monalisa-rating-scale button,
+.rating-scale button,
+.rating-buttons button {
+  width:min(100%,260px) !important;
+  min-height:50px !important;
+  touch-action:manipulation !important;
+}
+@media (max-width:600px) {
+  .monalisa-rating-scale button,
+  .rating-scale button,
+  .rating-buttons button {
+    min-height:54px !important;
+    font-size:1.05rem !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -295,22 +325,22 @@ section{min-height:100svh;position:relative;display:grid;place-items:center;padd
 </section>
 
 
-<section class="mona-rating" id="monaRating">
-  <div class="content reveal rating-wrap">
+<section class="mona-rating" id="monaRating" monalisa-rating-scale">
+  <div class="content reveal rating-wrap" monalisa-rating-scale">
     <div class="kicker">Game #3</div>
     <h2>Monalisa Rating System</h2>
     <p class="lead" style="margin-top:24px">Rate Monalisa Beuria from 1 to 10. ⭐</p>
-    <div class="rating-scale" id="ratingScale">
-      <button class="rating-btn" data-rating="1" onclick="playMonalisaSlap()">1 ⭐</button><button class="rating-btn" data-rating="2" onclick="playMonalisaSlap()">2 ⭐</button><button class="rating-btn" data-rating="3" onclick="playMonalisaSlap()">3 ⭐</button><button class="rating-btn" data-rating="4" onclick="playMonalisaSlap()">4 ⭐</button><button class="rating-btn" data-rating="5" onclick="playMonalisaSlap()">5 ⭐</button><button class="rating-btn" data-rating="6" onclick="playMonalisaSlap()">6 ⭐</button><button class="rating-btn" data-rating="7" onclick="playMonalisaSlap()">7 ⭐</button><button class="rating-btn" data-rating="8" onclick="playMonalisaSlap()">8 ⭐</button><button class="rating-btn" data-rating="9" onclick="playMonalisaSlap()">9 ⭐</button><button class="rating-btn" data-rating="10" onclick="playMonalisaSlap()">10 ⭐</button>
+    <div class="rating-scale" id="ratingScale" monalisa-rating-scale">
+      <button class="rating-btn" data-rating="1" onclick="playMonalisaSlap()" monalisa-rating-scale">1 ⭐</button><button class="rating-btn" data-rating="2" onclick="playMonalisaSlap()" monalisa-rating-scale">2 ⭐</button><button class="rating-btn" data-rating="3" onclick="playMonalisaSlap()" monalisa-rating-scale">3 ⭐</button><button class="rating-btn" data-rating="4" onclick="playMonalisaSlap()" monalisa-rating-scale">4 ⭐</button><button class="rating-btn" data-rating="5" onclick="playMonalisaSlap()" monalisa-rating-scale">5 ⭐</button><button class="rating-btn" data-rating="6" onclick="playMonalisaSlap()" monalisa-rating-scale">6 ⭐</button><button class="rating-btn" data-rating="7" onclick="playMonalisaSlap()" monalisa-rating-scale">7 ⭐</button><button class="rating-btn" data-rating="8" onclick="playMonalisaSlap()" monalisa-rating-scale">8 ⭐</button><button class="rating-btn" data-rating="9" onclick="playMonalisaSlap()" monalisa-rating-scale">9 ⭐</button><button class="rating-btn" data-rating="10" onclick="playMonalisaSlap()" monalisa-rating-scale">10 ⭐</button>
     </div>
-    <div class="rating-success" id="ratingSuccess">10/10 ACCEPTED 👑<div class="rating-note">You understand the assignment.</div></div>
+    <div class="rating-success" id="ratingSuccess" monalisa-rating-scale">10/10 ACCEPTED 👑<div class="rating-note" monalisa-rating-scale">You understand the assignment.</div></div>
   </div>
 </section>
-<div class="rating-overlay" id="ratingOverlay" role="dialog" aria-modal="true">
-  <div class="rating-pop">
-    <div class="rating-how">HOW DARE YOU?!</div>
-    <div class="rating-sub">🚨 Rating error. There is only one acceptable answer.</div>
-    <button class="rating-close" id="ratingClose">I understand 😭</button>
+<div class="rating-overlay" id="ratingOverlay" role="dialog" aria-modal="true" monalisa-rating-scale">
+  <div class="rating-pop" monalisa-rating-scale">
+    <div class="rating-how" monalisa-rating-scale">HOW DARE YOU?!</div>
+    <div class="rating-sub" monalisa-rating-scale">🚨 Rating error. There is only one acceptable answer.</div>
+    <button class="rating-close" id="ratingClose" monalisa-rating-scale">I understand 😭</button>
   </div>
 </div>
 
@@ -632,7 +662,7 @@ function playMonalisaSlap() {
 
   const overlay = document.createElement("div");
   overlay.className = "rating-slap-overlay";
-  overlay.innerHTML = '<div class="rating-slap-hand" aria-hidden="true">🖐️</div>';
+  overlay.innerHTML = '<div class="rating-slap-hand" aria-hidden="true" monalisa-rating-scale">🖐️</div>';
   document.body.appendChild(overlay);
 
   setTimeout(() => {
