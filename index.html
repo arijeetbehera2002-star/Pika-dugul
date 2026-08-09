@@ -78,7 +78,41 @@ section{min-height:100svh;position:relative;display:grid;place-items:center;padd
 @keyframes donPop{from{opacity:0;transform:scale(.45) rotate(-5deg)}to{opacity:1;transform:scale(1) rotate(0)}}
 @keyframes confettiFall{to{transform:translate3d(var(--drift),120vh,0) rotate(720deg)}}
 @media(max-width:520px){.quiz-card{padding:22px 16px}.quiz-option{padding:15px 14px}.quiz-photo-frame{width:92vw}}
+
+/* Monalisa Rating System */
+.mona-rating{background:radial-gradient(circle at 50% 35%,#2a1b10,#090a10 68%);min-height:90svh}.rating-wrap{width:min(100%,820px)}.rating-scale{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;margin:38px auto 0}.rating-btn{padding:15px 8px;border:1px solid rgba(217,189,125,.3);border-radius:9px;background:rgba(255,255,255,.045);color:var(--text);cursor:pointer;font:600 1rem Inter,system-ui,sans-serif;transition:transform .15s,border-color .15s,background .15s}.rating-btn:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(217,189,125,.1)}.rating-overlay{position:fixed;inset:0;z-index:8000;display:none;place-items:center;background:rgba(35,0,0,.9);backdrop-filter:blur(7px)}.rating-overlay.show{display:grid;animation:ratingFlash .18s ease both}.rating-pop{width:min(90vw,650px);text-align:center;padding:45px 25px;border:3px solid #ff4d4d;border-radius:18px;background:#160608;box-shadow:0 0 70px rgba(255,50,50,.45);animation:ratingShake .5s ease}.rating-how{font-size:clamp(3.5rem,14vw,7rem);font-weight:900;color:#ff5050;text-shadow:0 0 30px rgba(255,50,50,.55);line-height:.9}.rating-sub{margin-top:22px;font-family:"Cormorant Garamond",serif;font-size:1.55rem;color:#f4e7d7}.rating-close{margin-top:28px;padding:13px 25px;border:0;border-radius:8px;background:#d9bd7d;color:#111522;font-weight:700;cursor:pointer}.rating-success{display:none;margin-top:32px;font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,6vw,3.6rem);color:#f4cf61;animation:winnerPop .6s ease both}.rating-success.show{display:block}.rating-note{margin-top:18px;color:var(--muted);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}@keyframes ratingShake{0%,100%{transform:translateX(0) rotate(0)}20%{transform:translateX(-12px) rotate(-1deg)}40%{transform:translateX(12px) rotate(1deg)}60%{transform:translateX(-8px) rotate(-.6deg)}80%{transform:translateX(7px) rotate(.6deg)}}@keyframes ratingFlash{from{opacity:0}to{opacity:1}}
 </style>
+<style>
+/* Monalisa Rating: dramatic slap reaction */
+@keyframes ratingSlapShake {
+  0%,100% { transform: translateX(0) rotate(0); }
+  15% { transform: translateX(-14px) rotate(-2deg); }
+  30% { transform: translateX(18px) rotate(2deg); }
+  45% { transform: translateX(-22px) rotate(-3deg); }
+  60% { transform: translateX(20px) rotate(3deg); }
+  75% { transform: translateX(-10px) rotate(-1deg); }
+}
+@keyframes slapHand {
+  0% { transform: translateX(180px) rotate(25deg) scale(.7); opacity:0; }
+  45% { transform: translateX(15px) rotate(-8deg) scale(1.08); opacity:1; }
+  55% { transform: translateX(0) rotate(0) scale(1); opacity:1; }
+  100% { transform: translateX(-120px) rotate(-20deg) scale(.8); opacity:0; }
+}
+@keyframes slapFlash {
+  0%,100% { opacity:0; }
+  25%,45% { opacity:.9; }
+}
+.rating-slap-shake { animation: ratingSlapShake .55s ease-in-out; }
+.rating-slap-overlay {
+  position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center;
+  background:rgba(170,0,0,.45); pointer-events:none; animation:slapFlash .55s ease-in-out;
+}
+.rating-slap-hand {
+  font-size:clamp(90px,18vw,220px); filter:drop-shadow(0 12px 12px rgba(0,0,0,.35));
+  animation:slapHand .55s cubic-bezier(.2,.8,.2,1) forwards;
+}
+</style>
+
 </head>
 <body>
 
@@ -260,11 +294,47 @@ section{min-height:100svh;position:relative;display:grid;place-items:center;padd
   </div>
 </section>
 
+
+<section class="mona-rating" id="monaRating">
+  <div class="content reveal rating-wrap">
+    <div class="kicker">Game #3</div>
+    <h2>Monalisa Rating System</h2>
+    <p class="lead" style="margin-top:24px">Rate Monalisa Beuria from 1 to 10. ⭐</p>
+    <div class="rating-scale" id="ratingScale">
+      <button class="rating-btn" data-rating="1" onclick="playMonalisaSlap()">1 ⭐</button><button class="rating-btn" data-rating="2" onclick="playMonalisaSlap()">2 ⭐</button><button class="rating-btn" data-rating="3" onclick="playMonalisaSlap()">3 ⭐</button><button class="rating-btn" data-rating="4" onclick="playMonalisaSlap()">4 ⭐</button><button class="rating-btn" data-rating="5" onclick="playMonalisaSlap()">5 ⭐</button><button class="rating-btn" data-rating="6" onclick="playMonalisaSlap()">6 ⭐</button><button class="rating-btn" data-rating="7" onclick="playMonalisaSlap()">7 ⭐</button><button class="rating-btn" data-rating="8" onclick="playMonalisaSlap()">8 ⭐</button><button class="rating-btn" data-rating="9" onclick="playMonalisaSlap()">9 ⭐</button><button class="rating-btn" data-rating="10" onclick="playMonalisaSlap()">10 ⭐</button>
+    </div>
+    <div class="rating-success" id="ratingSuccess">10/10 ACCEPTED 👑<div class="rating-note">You understand the assignment.</div></div>
+  </div>
+</section>
+<div class="rating-overlay" id="ratingOverlay" role="dialog" aria-modal="true">
+  <div class="rating-pop">
+    <div class="rating-how">HOW DARE YOU?!</div>
+    <div class="rating-sub">🚨 Rating error. There is only one acceptable answer.</div>
+    <button class="rating-close" id="ratingClose">I understand 😭</button>
+  </div>
+</div>
+
 <footer>newyear2021 · a story by Dugul, for Pika</footer>
 
 <script>
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+
+<script>
+(function(){
+  const buttons=document.querySelectorAll('.rating-btn');
+  const overlay=document.getElementById('ratingOverlay');
+  const close=document.getElementById('ratingClose');
+  const success=document.getElementById('ratingSuccess');
+  function buzz(){try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;const ctx=new AC();const now=ctx.currentTime;const gain=ctx.createGain();gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.22,now+.02);gain.gain.exponentialRampToValueAtTime(.0001,now+.5);gain.connect(ctx.destination);[180,125,90].forEach((f,i)=>{const o=ctx.createOscillator();o.type='sawtooth';o.frequency.value=f;o.connect(gain);o.start(now+i*.08);o.stop(now+i*.08+.2)});}catch(e){}}
+  buttons.forEach(btn=>btn.addEventListener('click',function(){const n=Number(this.dataset.rating);if(n<10){buzz();overlay.classList.add('show');document.body.style.overflow='hidden';}else{success.classList.add('show');this.disabled=true;this.textContent='10 ⭐ ✓';}}));
+  function hide(){overlay.classList.remove('show');document.body.style.overflow='';}
+  close.addEventListener('click',hide);
+  overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('show'))hide()});
+})();
 </script>
 
 <script>
@@ -549,6 +619,27 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
     }
   }
 })();
+</script>
+
+<script>
+function playMonalisaSlap() {
+  document.body.classList.remove("rating-slap-shake");
+  void document.body.offsetWidth;
+  document.body.classList.add("rating-slap-shake");
+
+  const old = document.querySelector(".rating-slap-overlay");
+  if (old) old.remove();
+
+  const overlay = document.createElement("div");
+  overlay.className = "rating-slap-overlay";
+  overlay.innerHTML = '<div class="rating-slap-hand" aria-hidden="true">🖐️</div>';
+  document.body.appendChild(overlay);
+
+  setTimeout(() => {
+    overlay.remove();
+    document.body.classList.remove("rating-slap-shake");
+  }, 650);
+}
 </script>
 </body>
 </html>
