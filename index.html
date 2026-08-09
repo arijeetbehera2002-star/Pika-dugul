@@ -208,14 +208,103 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 
 
-<script>(function(){const special=["arijeet","arijeet behera","monalisa","monalisa beuria","dugul","dudul","pika","pikan","lisa"];const a=document.getElementById("person1"),b=document.getElementById("person2"),btn=document.getElementById("loveButton"),out=document.getElementById("loveResult");function norm(s){return s.trim().toLowerCase().replace(/\s+/g," ")}function calculate(){const n1=norm(a.value),n2=norm(b.value);if(!n1||!n2){out.classList.remove("hidden");out.innerHTML='<div><div class="love-label">Please enter both names ❤️</div></div>';return}const sameName=(n1.length>0&&n1===n2);if(sameName){out.classList.remove("hidden");out.innerHTML='<div><div class="infinite">⚠️</div><div class="love-label">INVALID</div><div class="infinite-text">Please enter two different names. 😉</div></div>';return}
+<script>
+(function(){
+  const person1=document.getElementById("person1");
+  const person2=document.getElementById("person2");
+  const button=document.getElementById("loveButton");
+  const result=document.getElementById("loveResult");
 
-const dhokaA=new Set(["monalisa","monalisa beuria","pika","pikan","lisa"]);
-const dhokaB=new Set(["avipsa","abhipsa","swati","dipti","swatirekha mahala","avipsa swani","diptisikha prusty"]);
-if((dhokaA.has(n1)&&dhokaB.has(n2))||(dhokaA.has(n2)&&dhokaB.has(n1))){
-  out.classList.remove("hidden");
-  out.innerHTML='<div><div class="infinite">💔😭</div><div class="love-label">DHOKA</div><div class="infinite-text">Heartbreak detected. 😭</div></div>';
-  return;
-}const infinite=special.includes(n1)&&special.includes(n2);const secret=["arijeet","sagar","niranjan","dudul","arijeet behera","dudgul"];const isSecret=secret.includes(n1)&&secret.includes(n2);out.classList.remove("hidden");if(isSecret){out.innerHTML='<div><div class="infinite">🤫</div><div class="love-label">SECRET 😉</div><div class="infinite-text">You found the secret. 😉</div></div>';}else if(infinite){out.innerHTML='<div><div class="infinite">∞</div><div class="love-label">INFINITE LOVE</div><div class="infinite-text">Some things simply cannot be measured. ❤️</div></div>';}else{const pct=Math.floor(Math.random()*99)+1;out.innerHTML='<div style="width:100%"><div class="love-percent" id="loveNumber">0%</div><div class="love-meter"><div class="love-fill" id="loveFill"></div></div><div class="love-label">'+n1+' ♥ '+n2+'</div></div>';setTimeout(()=>{document.getElementById("loveFill").style.width=pct+"%";let cur=0;const timer=setInterval(()=>{cur=Math.min(pct,cur+2);document.getElementById("loveNumber").textContent=cur+"%";if(cur>=pct)clearInterval(timer)},25)},60)}}btn.addEventListener("click",calculate);[a,b].forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calculate()}))})();</script>
+  function norm(value){
+    return String(value || "").trim().replace(/\s+/g," ").toLowerCase();
+  }
+
+  const infiniteNames=new Set([
+    "arijeet","arijeet behera","monalisa","monalisa beuria",
+    "dugul","dudul","pika","pikan","lisa"
+  ]);
+
+  const secretNames=new Set([
+    "arijeet","sagar","niranjan","dudul","arijeet behera","dudgul"
+  ]);
+
+  const dhokaGirls=new Set([
+    "monalisa","monalisa beuria","pika","pikan","lisa"
+  ]);
+
+  const dhokaOthers=new Set([
+    "avipsa","abhipsa","swati","dipti",
+    "swatirekha mahala","avipsa swani","diptisikha prusty"
+  ]);
+
+  function show(icon,title,text){
+    result.classList.remove("hidden");
+    result.innerHTML='<div><div class="infinite">'+icon+'</div><div class="love-label">'+title+'</div><div class="infinite-text">'+text+'</div></div>';
+  }
+
+  function calculate(){
+    const n1=norm(person1.value);
+    const n2=norm(person2.value);
+
+    if(!n1 || !n2){
+      show("❤️","ENTER BOTH NAMES","Please enter two names.");
+      return;
+    }
+
+    // 1. Same names always mean INVALID.
+    if(n1===n2){
+      show("⚠️","INVALID","Please enter two different names. 😉");
+      return;
+    }
+
+    // 2. DHOKA pair, checked before every other special outcome.
+    const dhoka =
+      (dhokaGirls.has(n1) && dhokaOthers.has(n2)) ||
+      (dhokaGirls.has(n2) && dhokaOthers.has(n1));
+
+    if(dhoka){
+      show("💔😭","DHOKA","Heartbreak detected. 😭");
+      return;
+    }
+
+    // 3. Secret pair.
+    if(secretNames.has(n1) && secretNames.has(n2)){
+      show("🤫","SECRET 😉","You found the secret.");
+      return;
+    }
+
+    // 4. Infinite pair.
+    if(infiniteNames.has(n1) && infiniteNames.has(n2)){
+      show("∞","INFINITE LOVE","Some things simply cannot be measured. ❤️");
+      return;
+    }
+
+    // 5. Everyone else gets a random percentage below 100.
+    const pct=Math.floor(Math.random()*99)+1;
+    result.classList.remove("hidden");
+    result.innerHTML='<div style="width:100%"><div class="love-percent" id="loveNumber">0%</div><div class="love-meter"><div class="love-fill" id="loveFill"></div></div><div class="love-label">'+n1+' ♥ '+n2+'</div></div>';
+
+    setTimeout(function(){
+      const fill=document.getElementById("loveFill");
+      const number=document.getElementById("loveNumber");
+      if(!fill || !number) return;
+      fill.style.width=pct+"%";
+      let cur=0;
+      const timer=setInterval(function(){
+        cur=Math.min(pct,cur+2);
+        number.textContent=cur+"%";
+        if(cur>=pct) clearInterval(timer);
+      },25);
+    },60);
+  }
+
+  button.addEventListener("click",calculate);
+  [person1,person2].forEach(function(input){
+    input.addEventListener("keydown",function(e){
+      if(e.key==="Enter") calculate();
+    });
+  });
+})();
+</script>
 </body>
 </html>
